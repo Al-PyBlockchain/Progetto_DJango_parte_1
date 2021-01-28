@@ -1,0 +1,14 @@
+{% extends 'api/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h3><u>Requisiti del progetto:</u></h3>
+<ul>
+    <li>Una pagina per far registrare ed accedere gli utenti</li>
+    <li>Una pagina, accessibile soltanto dagli utenti loggati, dalla quale è possibile scrivere un post, e guardare tutti i post degli altri utenti in ordine cronologico</li>
+    <li>Una pagina, alla quale soltanto gli amministratori possono accedere, dove è possibile vedere il numero di post pubblicati da ciascun utente</li>
+    <li>Una pagina, accessibile dall’url /utente/[id], dove [id] è un parametro che rappresenta l’id dell’utente (HINT)</li>
+    <li>Un endpoint che restituisca una risposta in JSON contenente le informazioni su tutti i post pubblicati nell’ultima ora</li>
+</ul>
+{% endblock %}

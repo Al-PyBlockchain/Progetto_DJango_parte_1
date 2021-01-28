@@ -1,0 +1,33 @@
+{% extends "api/base.html" %}
+
+{% block title %}Post List{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div>
+        <h2>Scrivi un Post</h2>
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            {{ w_post.as_p }}
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+    <br>
+    <hr>
+    <hr>
+    <h2>Lista Post</h2>
+    <br>
+    <div>
+        {% for post in posts %}
+            <div>
+                <!--<p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>-->
+                <h3>Post di {{post.user}}</h3>
+                <p>{{post.content}}</p>
+                <p>published: {{ post.datetime }}</p> <!--nota: diverso published_date-->
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
