@@ -20,17 +20,3 @@ def send_transaction(message):
     tx = w3.eth.sendRawTransaction(signed_tx.rawTransaction)
     tx_id = w3.toHex(tx)
     return tx_id
-
-
-# --- Funzione di prova in sostituzione a send_transaction per evitare problemi di gas_price in fase di test ---
-
-""" Per tornare a usare send_transaction:
-
-in api/models.py, togliere cancelletto a: from api.utils import send_transaction, tx_id (in class Post), self.tx_id (in write_on_chain),
-in api/models.py, mettere cancelletto a: from api.utils import send_prova, a (in class Post), self.a (in write_on_chain),
-
-in api/utils.py, mettere cancelletto a intera funzione send_prova. """
-
-def send_prova(message):
-    a = 'Funzione di prova'
-    return a
